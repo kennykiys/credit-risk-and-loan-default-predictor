@@ -4,7 +4,7 @@ A machine learning project that predicts whether a loan applicant is likely to d
 
 **Try it live:** https://loan-default-predictor-fuvwsjx3h7xhsfziaxgjcf.streamlit.app/
 
-## The Problem
+### The Problem
 Lenders need to know, before approving a loan, how likely an applicant is to default. Get it wrong in one direction and you turn away good customers; get it wrong in the other and you take on bad debt. This project tackles that trade-off using real applicant data (income, credit history, employment, and credit bureau scores) to estimate default risk.
 
 ## The Data
@@ -16,16 +16,11 @@ Built on the Home Credit Default Risk dataset (`application_train.csv`) — tens
 - Trained and compared three models: **Logistic Regression**, **Decision Tree**, and **Random Forest**, each tuned via `GridSearchCV`
 - Evaluated models on more than just accuracy — since the dataset is imbalanced, accuracy alone is misleading. I focused on **recall** for the default class (how many actual defaulters the model catches), since missing a real defaulter is costlier to a lender than a false alarm
 
-## Results
-| Model | Accuracy | Precision (default) | Recall (default) | F1 (default) |
-|---|---|---|---|---|
-| Logistic Regression (tuned) | 68.5% | 0.16 | 0.68 | 0.26 |
-| Decision Tree (tuned) | 59.8% | 0.13 | 0.72 | 0.22 |
-| Random Forest (tuned) | 72.7% | 0.17 | 0.62 | 0.27 |
-
+### Results
+Of the three tuned models, Random Forest performed best overall 72.7% accuracy and the highest F1-score (0.27) for the default class. Logistic Regression followed closely behind at 68.5% accuracy, with the strongest recall of the interpretable models (68%, meaning it caught 68% of actual defaulters). Decision Tree had the lowest accuracy (59.8%) but the highest raw recall (72%), at the cost of more false alarms.
 Random Forest edged out the others on overall accuracy and F1-score. But for the live demo, I chose the **tuned Logistic Regression model** — it catches a strong share of actual defaulters (68% recall) while staying more transparent and interpretable than a forest of trees, which matters in a lending context where decisions often need to be explainable.
 
-## The Live Demo
+### The Live Demo
 
 Rather than leave the model buried in a notebook, I built a Streamlit web app so anyone — faculty, recruiters, or just the curious — can enter applicant details and get a real-time risk prediction, powered by the actual trained model.
 
@@ -35,13 +30,13 @@ Rather than leave the model buried in a notebook, I built a Streamlit web app so
 3. Scales the input exactly as the training data was scaled
 4. Returns a live default probability and a clear risk classification
 
-## Tech Stack
+### Tech Stack
 
 - **Python** — pandas, NumPy, scikit-learn for data processing and modeling
 - **Streamlit** — for the live, interactive front end
 - **joblib** — for saving and loading the trained model and preprocessing artifacts
 
-## Files in This Repo
+### Files in This Repo
 
 - `app.py` — the Streamlit application
 - `loan_model.pkl`, `scaler.pkl`, `model_columns.pkl`, `column_medians.pkl`, `organization_freq_map.pkl`, `occupation_freq_map.pkl` — the trained model and preprocessing artifacts the app depends on
