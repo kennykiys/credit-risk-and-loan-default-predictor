@@ -1,5 +1,4 @@
 # Loan Default Risk Predictor
-
 A machine learning project that predicts whether a loan applicant is likely to default, built as part of my capstone project. It walks through the full pipeline  from messy raw applicant data to a live, interactive prediction tool.
 
 **Try it live:** https://loan-default-predictor-fuvwsjx3h7xhsfziaxgjcf.streamlit.app/
