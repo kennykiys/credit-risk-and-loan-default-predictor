@@ -6,8 +6,8 @@ A machine learning project that predicts whether a loan applicant is likely to d
 ### The Problem
 Lenders need to know, before approving a loan, how likely an applicant is to default. Get it wrong in one direction and you turn away good customers; get it wrong in the other and you take on bad debt. This project tackles that trade-off using real applicant data (income, credit history, employment, and credit bureau scores) to estimate default risk.
 
-### The Data
-Built on the Home Credit Default Risk dataset (`application_train.csv`) — tens of thousands of loan applications, each labeled with whether the applicant ultimately defaulted. Like most real-world credit data, it's heavily imbalanced: the vast majority of applicants repay their loans, and only a small fraction default. That imbalance shaped almost every modeling decision below.
+## The Data
+Built on the [Home Credit Default Risk dataset](https://www.kaggle.com/competitions/home-credit-default-risk/data) from Kaggle (`application_train.csv`). Tens of thousands of loan applications, each labeled with whether the applicant ultimately defaulted. Like most real-world credit data, it's heavily imbalanced: the vast majority of applicants repay their loans, and only a small fraction default. That imbalance shaped almost every modeling decision below.
 
 ### What I Did
 - Cleaned and explored the data, handling missing values and skewed distributions (e.g. log-transforming income)
@@ -16,8 +16,7 @@ Built on the Home Credit Default Risk dataset (`application_train.csv`) — tens
 - Evaluated models on more than just accuracy — since the dataset is imbalanced, accuracy alone is misleading. I focused on **recall** for the default class (how many actual defaulters the model catches), since missing a real defaulter is costlier to a lender than a false alarm
 
 ### Results
-Of the three tuned models, Random Forest performed best overall 72.7% accuracy and the highest F1-score (0.27) for the default class. Logistic Regression followed closely behind at 68.5% accuracy, with the strongest recall of the interpretable models (68%, meaning it caught 68% of actual defaulters). Decision Tree had the lowest accuracy (59.8%) but the highest raw recall (72%), at the cost of more false alarms.
-Random Forest edged out the others on overall accuracy and F1-score. But for the live demo, I chose the **tuned Logistic Regression model** — it catches a strong share of actual defaulters (68% recall) while staying more transparent and interpretable than a forest of trees, which matters in a lending context where decisions often need to be explainable.
+Random Forest performed best overall (72.7% accuracy, 62% recall), followed by Logistic Regression (68.5% accuracy, 68% recall) and Decision Tree (59.8% accuracy, 72% recall). I chose the **tuned Logistic Regression model** for the live demo. It balances catching real defaulters with staying interpretable.
 
 ### The Live Demo
 Rather than leave the model buried in a notebook, I built a Streamlit web app so anyone — faculty, recruiters, or just the curious — can enter applicant details and get a real-time risk prediction, powered by the actual trained model.
