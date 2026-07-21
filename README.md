@@ -1,26 +1,22 @@
 # Loan Default Risk Predictor
 
-A machine learning project that predicts whether a loan applicant is likely to default, built as part of my capstone project. It walks through the full pipeline — from messy raw applicant data to a live, interactive prediction tool anyone can try.
+A machine learning project that predicts whether a loan applicant is likely to default, built as part of my capstone project. It walks through the full pipeline  from messy raw applicant data to a live, interactive prediction tool.
 
 **Try it live:** https://loan-default-predictor-fuvwsjx3h7xhsfziaxgjcf.streamlit.app/
 
 ## The Problem
-
 Lenders need to know, before approving a loan, how likely an applicant is to default. Get it wrong in one direction and you turn away good customers; get it wrong in the other and you take on bad debt. This project tackles that trade-off using real applicant data (income, credit history, employment, and credit bureau scores) to estimate default risk.
 
 ## The Data
-
 Built on the Home Credit Default Risk dataset (`application_train.csv`) — tens of thousands of loan applications, each labeled with whether the applicant ultimately defaulted. Like most real-world credit data, it's heavily imbalanced: the vast majority of applicants repay their loans, and only a small fraction default. That imbalance shaped almost every modeling decision below.
 
 ## What I Did
-
 - Cleaned and explored the data, handling missing values and skewed distributions (e.g. log-transforming income)
 - Engineered new features, including credit-to-income and annuity-to-income ratios, and frequency-encoded high-cardinality categorical fields like organization and occupation type
 - Trained and compared three models: **Logistic Regression**, **Decision Tree**, and **Random Forest**, each tuned via `GridSearchCV`
 - Evaluated models on more than just accuracy — since the dataset is imbalanced, accuracy alone is misleading. I focused on **recall** for the default class (how many actual defaulters the model catches), since missing a real defaulter is costlier to a lender than a false alarm
 
 ## Results
-
 | Model | Accuracy | Precision (default) | Recall (default) | F1 (default) |
 |---|---|---|---|---|
 | Logistic Regression (tuned) | 68.5% | 0.16 | 0.68 | 0.26 |
