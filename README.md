@@ -36,7 +36,7 @@ Rather than leave the model buried in a notebook, I built a Streamlit web app so
 - `app.py` the Streamlit application
 - `loan_model.pkl`, `scaler.pkl`, `model_columns.pkl`, `column_medians.pkl`, `organization_freq_map.pkl`, `occupation_freq_map.pkl` — the trained model and preprocessing artifacts the app depends on
 - `requirements.txt` dependencies needed to run or deploy the app
-- 
+- Capstone_project-loan_default_risk_prediction
 
 ### Running It Locally
 ```bash
