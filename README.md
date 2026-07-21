@@ -19,7 +19,7 @@ Built on the [Home Credit Default Risk dataset](https://www.kaggle.com/competiti
 Random Forest performed best overall (72.7% accuracy, 62% recall), followed by Logistic Regression (68.5% accuracy, 68% recall) and Decision Tree (59.8% accuracy, 72% recall). I chose the **tuned Logistic Regression model** for the live demo. It balances catching real defaulters with staying interpretable.
 
 ### The Live Demo
-Rather than leave the model buried in a notebook, I built a Streamlit web app so anyone — faculty, recruiters, or just the curious — can enter applicant details and get a real-time risk prediction, powered by the actual trained model.
+Rather than leave the model buried in a notebook, I built a Streamlit web app so anyone can enter applicant details and get a real-time risk prediction, powered by the actual trained model.
 
 **What it does:**
 1. Takes applicant inputs (income, credit amount, employment history, credit bureau scores, etc.)
@@ -28,14 +28,14 @@ Rather than leave the model buried in a notebook, I built a Streamlit web app so
 4. Returns a live default probability and a clear risk classification
 
 ### Tech Stack
-- **Python** — pandas, NumPy, scikit-learn for data processing and modeling
-- **Streamlit** — for the live, interactive front end
-- **joblib** — for saving and loading the trained model and preprocessing artifacts
+- **Python**:pandas, NumPy, scikit-learn for data processing and modeling
+- **Streamlit**: for the live, interactive front end
+- **joblib**:for saving and loading the trained model and preprocessing artifacts
 
 ### Files in This Repo
-- `app.py` — the Streamlit application
+- `app.py` the Streamlit application
 - `loan_model.pkl`, `scaler.pkl`, `model_columns.pkl`, `column_medians.pkl`, `organization_freq_map.pkl`, `occupation_freq_map.pkl` — the trained model and preprocessing artifacts the app depends on
-- `requirements.txt` — dependencies needed to run or deploy the app
+- `requirements.txt` dependencies needed to run or deploy the app
 - 
 
 ### Running It Locally
