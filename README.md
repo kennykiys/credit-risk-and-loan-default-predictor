@@ -1,12 +1,12 @@
-# Loan Default Risk Predictor
-A machine learning project that predicts whether a loan applicant is likely to default, built as part of my capstone project. It walks through the full pipeline  from messy raw applicant data to a live, interactive prediction tool.
+# Predictive Analytics For Credit Risk and Loan Default
+A machine learning project that predicts whether a loan applicant is likely to default, using historical borrower data, financial history, credit profile and loan characteristics, built as part of my capstone project. It walks through the full pipeline from messy raw applicant data to a live, interactive prediction tool.
 
 **Try it live:** https://loan-default-predictor-fuvwsjx3h7xhsfziaxgjcf.streamlit.app/
 
 ### The Problem
 Lenders need to know, before approving a loan, how likely an applicant is to default. Get it wrong in one direction and you turn away good customers; get it wrong in the other and you take on bad debt. This project tackles that trade-off using real applicant data (income, credit history, employment, and credit bureau scores) to estimate default risk.
 
-### The Data
+### The Dataset
 Built on the [Home Credit Default Risk dataset](https://www.kaggle.com/competitions/home-credit-default-risk/data) from Kaggle (`application_train.csv`). Tens of thousands of loan applications, each labeled with whether the applicant ultimately defaulted. Like most real-world credit data, it's heavily imbalanced: the vast majority of applicants repay their loans, and only a small fraction default. That imbalance shaped almost every modeling decision below.
 
 ### What I Did
@@ -43,3 +43,9 @@ Rather than leave the model buried in a notebook, I built a Streamlit web app so
 pip install -r requirements.txt
 streamlit run app.py
 ```
+### Team
+This this a group project completed with:
+- Stephanie Ayamga
+- Temiloluwa Alonge
+- Omolabake Badmus
+- Okerinde Kehinde (me)
