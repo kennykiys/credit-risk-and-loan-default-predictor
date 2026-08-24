@@ -45,7 +45,4 @@ streamlit run app.py
 ```
 ### Team
 This this a group project completed with:
-- Stephanie Ayamga
-- Temiloluwa Alonge
-- Omolabake Badmus
-- Okerinde Kehinde (me)
+- Stephanie Ayamga, - Temiloluwa Alonge, - Omolabake Badmus - Okerinde Kehinde (me)
